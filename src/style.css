@@ -1,8 +1,8 @@
 .whole{
-  background: grey;
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
+  background: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding-bottom: 40px;
 }
 #wrap {
@@ -11,7 +11,7 @@
   margin: auto;
 }
 #color{
-  background:  rgba(211, 211, 211, 0.4);
+  background: rgba(211, 211, 211, 0.4);
 }
 #left, #right {
   background: #ccc;
@@ -37,24 +37,24 @@ div.col-sm-4 .cardform{
 }
 #one {
   background-color: gray;
-  float:left;
-  margin-right:20px;
-  width:20%;
-  border-right:2px solid #000;
+  float: left;
+  margin-right: 20px;
+  width: 20%;
+  border-right: 2px solid #000;
 }
 #two {
   background-color: white;
-  overflow:hidden;
-  margin:10px;
-  border:2px dashed #ccc;
-  min-height:170px;
+  overflow: hidden;
+  margin: 10px;
+  border: 2px dashed #ccc;
+  min-height: 170px;
 }
 @media screen and (max-width: 400px) {
   #one {
     float: none;
-    margin-right:0;
+    margin-right: 0;
     width:auto;
-    border:0;
-    border-bottom:2px solid #000;
+    border: 0;
+    border-bottom: 2px solid #000;
   }
 }

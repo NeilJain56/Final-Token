@@ -30,6 +30,7 @@ class Cart extends Component {
       })
       .catch(function (error) {
         //There is something wrong with the transaction, display error message
+        alert("Something went wrong. Please try again later.");
         console.log("Something went wrong. Please try again later.")
       });
       i++;
@@ -48,7 +49,7 @@ class Cart extends Component {
   };
   createCart = () => {
     if(this.props.cart.length > 1){
-      const listItems = this.props.cart.map((user) => <li key={user.name} className="cart">{user.name}  {user.price}</li>);
+      const listItems = this.props.cart.map((user, key) => <li key={key} className="cart">{user.name}  {user.price}</li>);
       return listItems;
     }
   };

@@ -117,7 +117,7 @@ class App extends Component {
                       <FormControl placeholder="Expiration Date"
                         autoComplete='cc-exp'
                         value={this.state.expiry}
-                        onChange={e=>this.setState({expiry: e.target.value.substr(0, 5), focused:"exp"})} />
+                        onChange={e=>this.setState({expiry: e.target.value.substr(0, 5), focused: "expiry"})} />
                     </FormGroup>
                     <FormGroup validationState={this.validateCVC()}>
                       <FormControl placeholder="CVC"
