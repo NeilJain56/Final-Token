@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+.person-wrapper{
+  margin-top: 5rem;
+  margin-left: 4.5rem;
+  margin-right: 2rem;
+  height:18rem;
+}
+h3 {
+  font-family: 'Oswald', sans-serif;
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+}
