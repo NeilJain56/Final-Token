@@ -1,4 +1,11 @@
+@fontface {
+  font-family: 'Anders', sans-serif;
+  src: url('./Anders.ttf');
+}
 #name {
   text-decoration: none;
   font-family: 'Anders', sans-serif;
+}
+.navbar {
+  background-color: #161728;
 }

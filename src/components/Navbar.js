@@ -7,10 +7,10 @@ import './navbar.css'
 class Navbars extends Component {
   render(){
     return(
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect className="navbar">
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="" id="name"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> TOKEN </a>
+            <a href="" id="name"><i className="fa fa-credit-card-alt" aria-hidden="true"></i> TOKEN </a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

@@ -1,10 +1,56 @@
 import React, {Component} from 'react';
-import './cartstyle.css'
+import './cartstyle.css';
 import {Button} from 'react-bootstrap';
+import axios from 'axios';
 
 class Cart extends Component {
+  handleSubmit = () => {
+    let i = 1;
+    let total = 0;
+    while(i < this.props.cart.length){
+      total += Number.parseFloat(this.props.cart[i].price);
+      var qs = require('qs');
+      var instance = axios.create({
+      baseURL: 'https://token-payment-server.herokuapp.com',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+      console.log(this.props.cart[i].number);
+      console.log(this.props.cart[i].cvc);
+      console.log(this.props.cart[i].price);
+      instance.post('/index.php', qs.stringify({
+          number: '4242424242424242',
+          exp_month: '12',
+          exp_year: '2019',
+          cvc: '424',
+          amount: this.props.cart[i].price * 100
+      }))
+      .then(function (response, data) {
+        if(response.data !== ""){
+          //There is something wrong with the transaction, display error message
+          alert(response.data);
+          console.log(response.data);
+        }
+      })
+      .catch(function (error) {
+        //There is something wrong with the transaction, display error message
+        console.log("Something went wrong. Please try again later.")
+      });
+      i++;
+    }
+    console.log("The total charge is " + total)
+    /*var generate = axios.create({
+    baseURL: 'https://token-payment-server.herokuapp.com'
+    });
+    generate.post('/card.php')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });*/
+  };
   createCart = () => {
-    if(this.props.cart.length >1){
+    if(this.props.cart.length > 1){
       const listItems = this.props.cart.map((user) => <li key={user.name} className="cart">{user.name}  {user.price}</li>);
       return listItems;
     }
@@ -14,7 +60,7 @@ class Cart extends Component {
       <div>
         {this.createCart()}
         <div className="center">
-          <li><Button bsStyle="primary"> Pay </Button></li>
+          <li><Button bsStyle="primary" onClick={this.handleSubmit}> Pay </Button></li>
         </div>
       </div>
     );

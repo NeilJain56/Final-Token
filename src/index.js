@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import Cards from 'react-credit-cards';
 import Navvy from './components/Navbar';
@@ -8,7 +8,7 @@ import Tut from './components/tutorial'
 import './style.css';
 
 
-class App extends React.Component {
+class App extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -98,6 +98,7 @@ class App extends React.Component {
                   <form>
                     <FormGroup validationState={this.validateName()}>
                       <FormControl placeholder="Cardholder"
+                      autoComplete='cc-name'
                       value={this.state.name}
                       onChange={e=>this.setState({name: e.target.value, focused:"name"})} />
                     </FormGroup>
@@ -105,6 +106,7 @@ class App extends React.Component {
                       <div className="input-group">
                         <span className="input-group-addon"><i className="glyphicon glyphicon-credit-card"></i></span>
                           <FormControl
+                          autoComplete='cc-number'
                           name="number" id="topper"
                           placeholder="Card Number"
                           value={this.state.number}
@@ -113,11 +115,13 @@ class App extends React.Component {
                     </FormGroup>
                     <FormGroup validationState={this.validateExp()}>
                       <FormControl placeholder="Expiration Date"
+                        autoComplete='cc-exp'
                         value={this.state.expiry}
                         onChange={e=>this.setState({expiry: e.target.value.substr(0, 5), focused:"exp"})} />
                     </FormGroup>
                     <FormGroup validationState={this.validateCVC()}>
                       <FormControl placeholder="CVC"
+                      autoComplete='cc-csc'
                       value={this.state.cvc}
                       onChange={this.expChanged} />
                     </FormGroup>
