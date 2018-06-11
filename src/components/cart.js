@@ -14,14 +14,11 @@ class Cart extends Component {
       baseURL: 'https://token-payment-server.herokuapp.com',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       });
-      console.log(this.props.cart[i].number);
-      console.log(this.props.cart[i].cvc);
-      console.log(this.props.cart[i].price);
       instance.post('/index.php', qs.stringify({
-          number: '4242424242424242',
+          number: this.props.cart[i].number,
           exp_month: '12',
           exp_year: '2019',
-          cvc: '424',
+          cvc: this.props.cart[i].cvc,
           amount: this.props.cart[i].price * 100
       }))
       .then(function (response, data) {

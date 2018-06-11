@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Anders', sans-serif;
-  src: url('./Anders.ttf');
+  src: url('./Anders.ttf') format('woff2');
 }
 #name {
   text-decoration: none;
